@@ -1,14 +1,13 @@
-import mongoose  from "mongoose";
+import mongoose from "mongoose";
 
-const userSchema=new mongoose.Schema({
-    name:{type:String,required:true},
-    email:{type:String,required:true,unique:true},
-    password:{type:String,required:true},
-    creditBalance:{type:Number,default:5},
-})
+const userSchema = new mongoose.Schema({
+    name: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
+    creditBalance: { type: Number, default: 5 },
+});
 
-const userModel=mongoose.models.user ||mongoose.model("user",userSchema)
+// Ensure the model uses the "texturAi" collection explicitly
+const userModel = mongoose.models.user || mongoose.model("user", userSchema);
 
-
-
-export default userModel
+export default userModel;
