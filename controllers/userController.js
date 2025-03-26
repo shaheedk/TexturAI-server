@@ -60,4 +60,8 @@ const loginUser = async (req, res) => {
   }
 };
 
+const userCredits=async(req,res)=>{
+  
+}
+
 export { registerUser, loginUser };
