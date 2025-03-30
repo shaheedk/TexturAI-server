@@ -7,6 +7,7 @@ const userSchema = new mongoose.Schema({
     creditBalance: { type: Number, default: 5 },
 });
 
+
 // Ensure the model uses the "texturAi" collection explicitly
 const userModel = mongoose.models.user || mongoose.model("user", userSchema);
 
