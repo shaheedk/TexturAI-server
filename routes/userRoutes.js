@@ -7,7 +7,7 @@ const userRouter=express.Router()
 
 userRouter.post('/register',registerUser)
 userRouter.post('/login',loginUser)
-userRouter.post('/credits',userAuth,userCredits)
+userRouter.get('/credits',userAuth,userCredits)
 export default userRouter;
 
 // https://localhost:5000/api/user/register

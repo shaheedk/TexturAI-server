@@ -34,7 +34,7 @@ const loginUser = async (req, res) => {
     const user = await userModel.findOne({ email });
 
     if (!user) {
-      return res.status(404).json({
+      return res.json({
         success: false,
         message: "User does not exist.",
       });
@@ -43,9 +43,7 @@ const loginUser = async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
 
     if (isMatch) {
-      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-        expiresIn: "1h",
-      });
+      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
 
       return res.json({ success: true, token, user: { name: user.name } });
     } else {
@@ -75,4 +73,4 @@ const userCredits = async (req, res) => {
   }
 };
 
-export { registerUser, loginUser,userCredits};
+export { registerUser, loginUser, userCredits };
