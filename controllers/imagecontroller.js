@@ -28,7 +28,6 @@ res.json({success:true,message:"Image Generated" ,creditBalance:user.creditBalan
 
 } catch (error) {
    console.log(error.message);
-   res.json({success:false,message:error.message})
-    
+   res.json({success:false,message:error.message})   
 }
 }
