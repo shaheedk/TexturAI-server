@@ -9,7 +9,6 @@ const userRouter=express.Router()
 userRouter.post('/register',registerUser)
 userRouter.post('/login',loginUser)
 userRouter.get('/credits',userAuth,userCredits)
-userRouter.get('/h','hello')
 userRouter.post('/pay-razor',userAuth,paymentRazorpay)
 userRouter.post('/verify-razor',verifyRazorpay)
 
